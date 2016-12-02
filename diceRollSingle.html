@@ -1,0 +1,142 @@
+# astral-dice
+Dice Roller for Astral Saga
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="diceRollSingle.css">
+  <script src="diceRollSingle.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <link href="http://fonts.googleapis.com/css?family=Lato:400,900" rel="stylesheet" type="text/css">
+  <title>Astral Dice Roller</title>
+</head>
+<body>
+ <div id="wrapper">
+
+<div class="header">
+<h1 class="header">Astral Saga - Dice Roller</h1>
+</div>
+
+<!--Dice Pool Generation-->
+
+<div id="generateDicePool">
+<div class="aspectDice">
+<p>Dice From Aspects<br/>
+<div class="number" id="aspectScore">0</div><br/>
+  <button class="upDown" id="btnAspectUp" onclick="aspectUp()">&#x25b2;</button>
+  <button class="upDown" id="btnAspectDown" onclick="aspectDown()">&#x25bc;</button>
+  <button class="confirm" id="btnAspectConfirm" onclick="aspectConfirm()"><b>Confirm</b></button>
+  <button class="upDown" id="btnAspectReset" onclick="aspectReset()"><strong>&#8635;</strong></button>
+  </p>
+  </div>
+  
+<div class="skillDice">
+<p>Dice From Skills<br/>
+<div class="number" id="skillScore">0</div><br/>
+  <button class="upDown" id="btnSkillUp" onclick="skillUp()">&#x25b2;</button>
+  <button class="upDown" id="btnSkillDown" onclick="skillDown()">&#x25bc;</button>
+  <button class="confirm" id="btnSkillConfirm" onclick="skillConfirm()"><b>Confirm</b></button>
+  <button class="upDown" id="btnSkillReset" onclick="skillReset()"><strong>&#8635;</strong></button>
+  </p>
+    </div>
+    
+</div>
+
+<div id="generateEdgePoints">
+    
+<div class="bonusEdge">
+<p>Edge From Action<br/>
+<div class="number" id="bonusEdge">0</div><br/>
+  <button class="upDown" id="btnBonusEdgeUp" onclick="edgeUp()">&#x25b2;</button>
+  <button class="upDown" id="btnBonusEdgeDown" onclick="edgeDown()">&#x25bc;</button>
+  <button class="confirm" id="btnBonusEdgeConfirm" onclick="edgeConfirm()"><b>Confirm</b></button>
+  <button class="upDown" id="btnBonusEdgeReset" onclick="edgeReset()"><strong>&#8635;</strong></button>
+  </p>
+</div>
+
+<div class="boonEdge">
+<p>Edge From Boon/Burden<br/>
+<div class="number" id="boonEdge">0</div><br/>
+  <button class="upDown" id="btnBoonEdgeUp" onclick="boonEdgeUp()">&#x25b2;</button>
+  <button class="upDown" id="btnBoonEdgeDown" onclick="boonEdgeDown()">&#x25bc;</button>
+  <button class="confirm" id="btnBoonEdgeConfirm" onclick="boonEdgeConfirm()"><b>Confirm</b></button>
+  <button class="upDown" id="btnBoonEdgeReset" onclick="boonEdgeReset()"><strong>&#8635;</strong></button>
+  </p>
+    </div>
+    
+</div>
+   
+</div>
+   
+ <div class="diceRolling">
+ <div class="dicePool">
+ <p>Dice Pool<br/>
+<div class="number" id="dicePool">0</div><br/> 
+  <button class="confirm" onclick="diceRoll()">Roll Dice</button>
+  </p>
+</div>
+
+<div class="diceResults">
+<p>Dice Results</p>
+  <p id="diceScores" style="font-weight:900; font-size:21px;"></p>
+  </div>
+    
+ <!-- <div class="generatedEdge">
+  <p>Edge<br/>
+<div class="number" id="edgeScore">0</div></p>
+  </div>
+  <div class="generatedPower">
+  <p>Power<br/>
+<div class="number" id="powerScore">0</div></p>
+  </div>
+ 
+    
+    <div class="edgePoints">
+    <p>Spend Edge</p>
+    <p><em>1 Point</em></p>
+    <button class="hundred" onclick="edgeForDice()">+1 Dice</button>
+     <p><em>2 Points</em></p>
+    <button class="hundred" onclick="edgeForPower()">+1 Power</button>
+   </div>
+   -->
+   </div>
+   
+    
+   
+<div class="finalScores">
+
+<div class="finalEdge">
+  <p>Edge<br/>
+<div class="number" id="edgeScore">0</div></p>
+  </div>
+  <div class="finalPower">
+  <p>Power<br/>
+<div class="number" id="powerScore">0</div></p>
+  </div>
+  
+    
+    <div class="spendEdge">
+    <p>Spend Edge</p>
+    <div id="plusDice">
+    	<p><button class="hundred" onclick="edgeForDice()">+1 Dice</button><br/>
+    	<em>1 Point</em></p>
+    </div>
+    <div id="plusPower">
+    	<p><button class="hundred" onclick="edgeForPower()">+1 Power</button><br/>
+    	<em>2 Points</em></p>
+    </div>
+   </div>
+
+</div>
+   
+<div class="clearAll">
+   <button id="clearAll"
+   onclick="clearDice();">
+   Clear All</button>
+   </div>
+   
+</div>
+
+</body>
+</html>
